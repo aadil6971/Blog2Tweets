@@ -14,7 +14,7 @@ A Chrome extension that extracts key points from any webpage using OpenAI embedd
    * Click **Code** ▶ **Download ZIP** or clone via Git:
 
      ```bash
-     git clone https://github.com/your-username/blog2tweets.git
+     git clone https://github.com/aadil6971/blog2tweets.git
      ```
    * Extract/unzip if needed.
 
