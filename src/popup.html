@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog-to-Tweets</title>
+    <style>
+      :root {
+        --primary: #4a90e2;
+        --bg: #fff;
+        --surf: #f5f7fa;
+        --bd: #dde3ec;
+        --txt: #1a202c;
+        --muted: #718096;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 360px;
+        height: 450px;
+        font: 14px/1.4 "Segoe UI", sans-serif;
+        color: var(--txt);
+        background: var(--bg);
+      }
+      .tabs {
+        display: flex;
+        border-bottom: 1px solid var(--bd);
+      }
+      .tab {
+        flex: 1;
+        padding: 12px;
+        text-align: center;
+        cursor: pointer;
+        background: var(--surf);
+        color: var(--muted);
+        border: none;
+      }
+      .tab.active {
+        background: var(--bg);
+        color: var(--txt);
+        border-bottom: 2px solid var(--primary);
+      }
+      .section {
+        padding: 12px;
+        height: calc(100% - 50px);
+        overflow-y: auto;
+      }
+      #gen-sec {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .hidden {
+        display: none;
+      }
+      button {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      button:hover {
+        background: #357ab8;
+      }
+      #tweets {
+        margin-top: 12px;
+      }
+      .tweet {
+        border-bottom: 1px solid var(--bd);
+        padding: 8px 0;
+        font-size: 13px;
+      }
+      .tweet a {
+        color: var(--txt);
+        text-decoration: none;
+      }
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 6px;
+        border: 1px solid var(--bd);
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      label {
+        font-size: 13px;
+        color: var(--muted);
+        display: block;
+        margin-top: 8px;
+      }
+      #saveStatus {
+        margin-top: 8px;
+        font-size: 12px;
+        color: var(--primary);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+      <button id="tab-gen" class="tab active">Generate</button>
+      <button id="tab-set" class="tab">Settings</button>
+    </div>
+    <div id="gen-sec" class="section">
+      <button id="genBtn">Analyze & Generate</button>
+      <div id="tweets"></div>
+    </div>
+    <div id="set-sec" class="section hidden">
+      <label for="apiKey">OpenAI API Key</label>
+      <input id="apiKey" type="text" placeholder="sk-..." />
+      <label for="tweetCount">Number of Tweets</label>
+      <input id="tweetCount" type="number" min="1" max="20" placeholder="10" />
+      <button id="saveBtn">Save Settings</button>
+      <div id="saveStatus"></div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

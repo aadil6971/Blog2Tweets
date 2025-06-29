@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Blog2Tweets",
+    "version": "1.2",
+    "description": "Use embeddings and AI to generate contextually relevant tweets from any webpage.",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "storage"
+    ],
+    "host_permissions": [
+      "<all_urls>",
+      "https://api.openai.com/*"
+    ],
+    "action": {
+      "default_popup": "src/popup.html"
+    },
+    "background": {
+      "service_worker": "src/background.js",
+      "type": "module"
+    }
+  }
