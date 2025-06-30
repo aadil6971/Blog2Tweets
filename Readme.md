@@ -52,4 +52,4 @@ A Chrome extension that extracts key points from any webpage using OpenAI embedd
 
 ## 📝 License
 
-MIT © \[Your Name]
+MIT © 
